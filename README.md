@@ -19,7 +19,7 @@ Um componente React moderno e responsivo para upload de arquivos com suporte a d
 
 ## 🛠️ Tech Stack
 
-- **React 19** - UI library
+- **React 19** - UI library  
 - **TypeScript** - Type safety
 - **Vite** - Build tool
 - **Tailwind CSS** - Styling
