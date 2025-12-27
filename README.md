@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# Upload Widget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um componente React moderno e responsivo para upload de arquivos com suporte a drag-and-drop, compressão de imagens e progresso em tempo real.
 
-Currently, two official plugins are available:
+## 📸 Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- Adicione a imagem do widget aqui -->
+![Upload Widget Preview](./public/widget-preview.png)
 
-## React Compiler
+## ✨ Recursos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📤 **Drag & Drop** - Arraste e solte seus arquivos
+- 🖼️ **Compressão de Imagens** - Reduz automaticamente o tamanho das imagens
+- ⚡ **Upload em Tempo Real** - Acompanhe o progresso do upload
+- 📊 **Visualização de Arquivos** - Lista com informações detalhadas
+- 🎨 **Interface Responsiva** - Adapta-se a qualquer tela
+- ♿ **Acessível** - Componentes Radix UI com suporte A11y
+- 🎭 **Animações Suaves** - Motion para transições fluidas
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Zustand** - State management
+- **Radix UI** - Accessible components
+- **Lucide React** - Icons
+- **Axios** - HTTP client
+- **React Dropzone** - Drag & drop
+- **Motion** - Animations
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Instalação
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# Instalar dependências
+pnpm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Servidor backend
+cd server
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Desenvolvimento
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Terminal 1 - Frontend (Vite)
+pnpm dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Terminal 2 - Backend (Node.js)
+cd server
+node index.js
 ```
+
+O app estará disponível em http://localhost:5173
+
+## 🏗️ Estrutura do Projeto
+
+```
+src/
+├── components/           # Componentes React
+│   ├── upload-widget.tsx      # Componente principal
+│   ├── upload-widget-dropzone.tsx
+│   ├── upload-widget-header.tsx
+│   ├── upload-widget-upload-list.tsx
+│   └── ui/                    # Componentes UI reutilizáveis
+├── http/                # APIs e requisições HTTP
+├── store/               # Zustand store (state management)
+├── utils/               # Funções utilitárias
+└── types/               # Type definitions
+```
+
+## 📝 Como Usar
+
+```tsx
+import { UploadWidget } from './components/upload-widget'
+
+export default function App() {
+  return <UploadWidget />
+}
+```
+
+## 🔧 Scripts
+
+```bash
+pnpm dev      # Iniciar desenvolvimento
+pnpm build    # Build para produção
+pnpm lint     # Executar linter
+pnpm preview  # Preview do build
+```
+
+## 📄 Licença
+
+MIT
